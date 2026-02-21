@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Page | Miracles Community</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="community-page">
+    <header class="community-header">
+      <h1>Miracles Community</h1>
+      <div>
+        <span class="status">Members Area</span>
+        <button id="logout" class="btn btn-outline" type="button">Log Out</button>
+      </div>
+    </header>
+
+    <main class="community-main">
+      <section class="welcome card">
+        <h2 id="welcome-title">Welcome back, Member!</h2>
+        <p>
+          You now have access to private discussions, event planning boards, mentorship circles,
+          and volunteer opportunities curated for our community.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Trending Discussions</h3>
+          <ul id="discussion-list"></ul>
+        </article>
+
+        <article class="card">
+          <h3>Upcoming Member Events</h3>
+          <ul id="event-list"></ul>
+        </article>
+
+        <article class="card">
+          <h3>Volunteer Opportunities</h3>
+          <ul id="volunteer-list"></ul>
+        </article>
+      </section>
+
+      <section class="card member-tools">
+        <div class="toolbar">
+          <h3>Member Directory</h3>
+          <input id="member-search" type="search" placeholder="Search members or teams" />
+        </div>
+        <div id="member-results" class="member-results"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
