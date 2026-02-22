@@ -4,26 +4,26 @@ const AUTH_KEY = "miracles_member_auth";
 
 const dashboardData = {
   discussions: [
-    "How to lead neighborhood outreach effectively",
-    "Prayer and encouragement thread",
-    "Best practices for mentoring new volunteers"
+    "Orientation Replay: Miracles Community Vision",
+    "Getting Started Q&A with mentors",
+    "Recorded Webinar: Building a daily transformation rhythm"
   ],
   events: [
-    "Virtual Prayer Circle — Wednesday, 7:00 PM",
-    "Food Pantry Service Day — Saturday, 9:00 AM",
-    "Leadership Workshop — Next Monday, 6:00 PM"
+    "Basic Course Cohort (Online) — Monday, 6:30 PM",
+    "Basic Course Coaching Circle — Thursday, 7:00 PM",
+    "Basic Course Seminar Weekend (In Person) — Next Month"
   ],
   volunteer: [
-    "Mentor Program for Youth",
-    "Senior Care Visit Team",
-    "Community Cleanup & Beautification"
+    "3-Day Seminar: Inner Renewal Intensive",
+    "Physical Retreat: Mountain Reset Weekend",
+    "Regional Retreat: Community Leadership & Practice"
   ],
   members: [
-    { name: "Ava Robinson", team: "Mentorship" },
-    { name: "Noah Thompson", team: "Prayer Circle" },
-    { name: "Sophia Chen", team: "Events" },
-    { name: "Mason Patel", team: "Food Pantry" },
-    { name: "Isabella Rivera", team: "Outreach" }
+    { name: "Ava Robinson", team: "Teacher Training" },
+    { name: "Noah Thompson", team: "Basic Course Coaching" },
+    { name: "Sophia Chen", team: "Membership Support" },
+    { name: "Mason Patel", team: "Retreat Facilitation" },
+    { name: "Isabella Rivera", team: "Webinar Production" }
   ]
 };
 
@@ -61,7 +61,7 @@ const renderMembers = (query = "") => {
   );
 
   if (!filtered.length) {
-    results.innerHTML = "<p>No members match your search.</p>";
+    results.innerHTML = "<p>No trainers or coaches match your search.</p>";
     return;
   }
 
