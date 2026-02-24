@@ -28,16 +28,18 @@
         <h3>Learn With Us</h3>
         <div class="feature-grid">
           <article class="card">
-            <h4>Introduction Webminar</h4>
+            <h4>Introductory Webinar</h4>
             <p>
-              Start with a online webminar:
+              Start with an online webinar:
               <ul>
  <li>Donation Based (Suggested €233)</li>
-<li>Introduction to The Adventure based on A Course In Mircles and The 12 Steps</li>
+<li>Introduction to The Adventure based on A Course In Miracles and The 12 Steps</li>
 <li>Leads onto The Basic Weekend Workshop</li>
                 </ul>
             </p>
+
             <button class="btn webinar-register" type="button">Register for Good Friday 3rd April 2026 -&gt;</button>
+
           </article>
           <article class="card">
             <h4>Basic Workshop</h4>
@@ -125,6 +127,54 @@
           <input id="password" type="password" autocomplete="current-password" required />
           <p id="error" class="error hidden">Invalid credentials. Please try again.</p>
           <button type="submit" class="btn">Enter Member Hub</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div
+      id="registration-modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="registration-title"
+    >
+      <div class="modal-content registration-content">
+        <button id="close-registration" class="close" aria-label="Close" type="button">&times;</button>
+        <h3 id="registration-title">Good Friday Webinar Registration</h3>
+        <p class="hint">Complete the form and continue to Stripe to finish your registration.</p>
+        <form id="registration-form">
+          <label for="reg-name">Name</label>
+          <input id="reg-name" name="name" type="text" required />
+
+          <label for="reg-phone">Phone Number</label>
+          <input id="reg-phone" name="phone" type="tel" required />
+
+          <label for="reg-email">Email Address</label>
+          <input id="reg-email" name="email" type="email" required />
+
+          <label for="reg-relationship">What's your relationship with God</label>
+          <textarea id="reg-relationship" name="relationshipWithGod" rows="3" required></textarea>
+
+          <label for="reg-miracles">Have you ever done A Course in Miracles?</label>
+          <select id="reg-miracles" name="courseInMiracles" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="reg-steps">Have you ever done the 12 Steps?</label>
+          <select id="reg-steps" name="twelveSteps" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="reg-struggle">What do you think you are struggling with right now?</label>
+          <textarea id="reg-struggle" name="currentStruggle" rows="4" required></textarea>
+
+          <p id="registration-error" class="error hidden">Please complete all required fields.</p>
+          <button type="submit" class="btn">Continue to Stripe</button>
         </form>
       </div>
     </div>

@@ -142,6 +142,21 @@ body {
   gap: 0.5rem;
 }
 
+
+.registration-content {
+  width: min(100%, 620px);
+  max-height: 92vh;
+  overflow: auto;
+}
+
+textarea,
+select {
+  border: 1px solid #d2d6f0;
+  border-radius: 10px;
+  padding: 0.65rem;
+  font: inherit;
+}
+
 input {
   border: 1px solid #d2d6f0;
   border-radius: 10px;
