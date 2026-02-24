@@ -21,8 +21,8 @@ body {
 }
 
 .hero {
-  background: linear-gradient(140deg, var(--primary-dark), var(--primary));
-  color: #fff;
+  background: #fff;
+  color: var(--text);
   padding: 1.25rem 1.25rem 3.5rem;
 }
 
@@ -228,4 +228,8 @@ input {
 .member-card span {
   color: #52598a;
   font-size: 0.9rem;
+}
+
+.webinar-register {
+  margin-top: 0.75rem;
 }
