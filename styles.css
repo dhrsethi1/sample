@@ -21,8 +21,8 @@ body {
 }
 
 .hero {
-  background: linear-gradient(140deg, var(--primary-dark), var(--primary));
-  color: #fff;
+  background: #fff;
+  color: var(--text);
   padding: 1.25rem 1.25rem 3.5rem;
 }
 
@@ -142,6 +142,21 @@ body {
   gap: 0.5rem;
 }
 
+
+.registration-content {
+  width: min(100%, 620px);
+  max-height: 92vh;
+  overflow: auto;
+}
+
+textarea,
+select {
+  border: 1px solid #d2d6f0;
+  border-radius: 10px;
+  padding: 0.65rem;
+  font: inherit;
+}
+
 input {
   border: 1px solid #d2d6f0;
   border-radius: 10px;
@@ -228,4 +243,8 @@ input {
 .member-card span {
   color: #52598a;
   font-size: 0.9rem;
+}
+
+.webinar-register {
+  margin-top: 0.75rem;
 }

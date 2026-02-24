@@ -1,6 +1,8 @@
 const DEMO_EMAIL = "member@miracles.org";
 const DEMO_PASSWORD = "Miracles2026";
 const AUTH_KEY = "miracles_member_auth";
+const REGISTRATION_KEY = "good_friday_registration";
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/test_8wM4gz2Qj4A12wobII";
 
 const dashboardData = {
   discussions: [
@@ -39,6 +41,13 @@ const openModal = () => {
 };
 
 const closeModal = () => byId("login-modal")?.classList.add("hidden");
+
+const openRegistrationModal = () => {
+  byId("registration-modal")?.classList.remove("hidden");
+  byId("reg-name")?.focus();
+};
+
+const closeRegistrationModal = () => byId("registration-modal")?.classList.add("hidden");
 
 const setList = (id, items) => {
   const list = byId(id);
@@ -104,6 +113,46 @@ const wireLoginFlow = () => {
   });
 };
 
+const wireRegistrationFlow = () => {
+  byId("open-registration")?.addEventListener("click", openRegistrationModal);
+  byId("close-registration")?.addEventListener("click", closeRegistrationModal);
+
+  byId("registration-modal")?.addEventListener("click", (event) => {
+    if (event.target === byId("registration-modal")) {
+      closeRegistrationModal();
+    }
+  });
+
+  byId("registration-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    const requiredFields = [
+      "name",
+      "phone",
+      "email",
+      "relationshipWithGod",
+      "courseInMiracles",
+      "twelveSteps",
+      "currentStruggle"
+    ];
+
+    const isValid = requiredFields.every((field) => String(payload[field] || "").trim());
+
+    if (!isValid) {
+      byId("registration-error")?.classList.remove("hidden");
+      return;
+    }
+
+    byId("registration-error")?.classList.add("hidden");
+    localStorage.setItem(REGISTRATION_KEY, JSON.stringify(payload));
+    window.location.href = STRIPE_PAYMENT_LINK;
+  });
+};
+
 const guardMembersPage = () => {
   if (window.location.pathname.endsWith("community.html") && !isLoggedIn()) {
     window.location.href = "index.html";
@@ -136,5 +185,6 @@ const initializeCommunityPage = () => {
 
 guardMembersPage();
 wireLoginFlow();
+wireRegistrationFlow();
 wireLogout();
 initializeCommunityPage();
